@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import {useState} from "react";
+import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query";
 import TopBanner from "@/components/TopBanner";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Plus, Trophy, Target, Medal, Flame, Edit } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {Button} from "@/components/ui/button";
+import {Edit, Flame, Medal, Plus, Target, Trophy} from "lucide-react";
+import {Dialog, DialogContent, DialogHeader, DialogTitle} from "@/components/ui/dialog";
+import {Input} from "@/components/ui/input";
+import {Label} from "@/components/ui/label";
 
 const TEST_ACCESS_TOKEN = "TEST_ACCESS_TOKEN";
 const TEST_USER_ID = "TEST_USER_ID";
@@ -211,7 +211,10 @@ const GoalsScreen = () => {
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-2xl font-bold">Goals & Quests</h1>
             <Button
-              onClick={() => setShowAddDialog(true)}
+              onClick={() => {
+                setEditedGoalId(null);
+                setShowAddDialog(true)
+              }}
               className="bg-[#F97316] hover:bg-[#F97316]/80"
             >
               <Plus className="mr-2 h-4 w-4" />
